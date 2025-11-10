@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sokoban</title>
+  <link rel="stylesheet" typr="text/css" href="style.css">
+  <script src="script.js" type="module" async ></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Menu Screen -->
+    <div id="menuScreen" class="screen active">
+      <h1>🎮 Sokoban</h1>
+      <h2>Выберите уровень:</h2>
+      <div class="level-list" id="levelList"></div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="screen">
+      <h1>Sokoban - Уровень <span id="currentLevelNumber">1</span></h1>
+      <div class="game-info">
+        <div>Ходов: <span id="moveCount">0</span></div>
+      </div>
+      <div class="game-canvas-container">
+        <canvas id="gameCanvas"></canvas>
+      </div>
+
+      <!-- Добавляем сенсорное управление -->
+      <div class="touch-controls">
+        <div class="d-pad">
+          <button class="touch-btn" id="touchUp">↑</button>
+          <button class="touch-btn" id="touchLeft">←</button>
+          <button class="touch-btn" id="touchDown">↓</button>
+          <button class="touch-btn" id="touchRight">→</button>
+        </div>
+        <div class="touch-game-controls">
+          <button class="touch-btn undoBtn">🔙</button>
+          <button class="touch-btn restartBtn">🔄</button>
+          <button class="touch-btn menuBtn">🏠</button>
+        </div>
+      </div>
+
+      <div class="game-controls">
+        <button class="btn undoBtn">🔙 Отмена хода</button>
+        <button class="btn restartBtn">🔄 Перезапустить</button>
+        <button class="btn menuBtn">🏠 В меню</button>
+      </div>
+    </div>
+
+    <!-- Victory Screen -->
+    <div id="victoryScreen" class="screen">
+      <div class="victory-message">
+        <h2>🎉 Уровень пройден!</h2>
+        <div class="victory-stats">
+          Количество ходов: <span id="finalMoveCount">0</span>
+        </div>
+      </div>
+      <div class="game-controls">
+        <button class="btn nextLevelBtn">➡️ Следующий уровень</button>
+        <button class="btn menuBtn">🏠 В меню</button>
+      </div>
+      <div class="touch-controls">
+          <button class="touch-btn nextLevelBtn">➡️</button>
+          <button class="touch-btn menuBtn">🏠</button>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
